@@ -48,16 +48,9 @@ project/
 
 1. **Pré-requisitos**:
    - Docker e Docker Compose instalados em sua máquina
+     
 
-2. **Configuração**:
-
-   - Clone o repositório:
-     ```
-     git clone https://github.com/SergioJCAlves/Desafio-Tecnico---Engenharia_de_Dados/
-     cd Desafio-Tecnico---Engenharia_de_Dados
-     ```
-
-4. **Inicialização**:
+2. **Inicialização**:
 
     - Crie os containers Docker:
 
@@ -85,13 +78,13 @@ project/
      
    - Aguarde alguns minutos para que todos os serviços inicializem completamente
 
-5. **Execução do Pipeline**:
+3. **Execução do Pipeline**:
    - Acesse a interface web do Airflow em `http://localhost:8080`
    - Use as credenciais (admin/admin)
    - Localize o DAG "cervejarias_etl" e ative-o
    - Dispare uma execução manual do DAG ou aguarde o agendamento automático
 
-6. **Verificação dos Resultados**:
+4. **Verificação dos Resultados**:
    - Os dados processados estarão disponíveis nos seguintes caminhos dentro do container:
      - Bronze: `/opt/airflow/data/bronze/breweries_raw.json`
      - Silver: `/opt/airflow/data/silver/breweries.parquet`
@@ -103,7 +96,7 @@ project/
      docker-compose exec airflow-worker cat /opt/airflow/data/gold/breweries_aggregated.csv
      ```
 
-7. **Encerrando a Aplicação**:
+5. **Encerrando a Aplicação**:
    - Para parar e remover os containers:
      ```
      docker-compose down
@@ -122,4 +115,3 @@ O pipeline inclui tratamento de erros para lidar com falhas na API, problemas de
 - As credenciais e chaves sensíveis são armazenadas como variáveis de ambiente e não são expostas no código-fonte.
 - O acesso à interface web do Airflow é protegido por autenticação.
 
-Para quaisquer dúvidas ou sugestões, por favor, abra uma issue neste repositório ou me ligue.
